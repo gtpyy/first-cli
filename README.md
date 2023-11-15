@@ -10,7 +10,7 @@
 
 ​		新建一个文件夹(文件夹名字不能为中文)打开命令行，输入`npm init -y`，会出现以下情况。
 
-![1699885562683](./img/2023-11-15_10-46-45.png)
+![2023-11-15_11-42-04](./imgs/2023-11-15_11-42-04.png)
 
 |      名称      |                         意思                          |       默认值       |
 | :------------: | :---------------------------------------------------: | :----------------: |
@@ -60,11 +60,11 @@ my-cli
 
 在询问问题前我们需要先创建一个入口文件，创建完成后在`package.json`中添加bin项，并且将入口文件路径写进去,bin下面的`my-cli`为启动命令
 
-![1699886719514](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699886719514.png)
+![2023-11-15_11-42-21](./imgs/2023-11-15_11-42-21.png)
 
 填写完入口文件路径后在入口文件`index.js`文件中最顶层声明文件执行方式为node。
 
-![1699886452108](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699886452108.png)
+![2023-11-15_11-42-35](./imgs/2023-11-15_11-42-35.png)
 
 ```text
 #! /usr/bin/env node
@@ -72,7 +72,7 @@ my-cli
 
 写完后我们需要测试一下我们是否可以正常的访问的我们的脚手架，在`bin`文件夹打开命令行，输入 `npm link` ，该命令会创建一个全局访问的包的快捷方式，这个是临时的就是本地测试的时候用的，这个在命令行输入你的脚手架的名称可以看到入口文件输出的内容。
 
-![1699886798402](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699886798402.png)
+![2023-11-15_11-43-00](./imgs/2023-11-15_11-43-00.png)
 
 ### 最基本的交互命令
 
@@ -125,7 +125,7 @@ program.parse(process.argv);
 
 `my-cli create my-first-cli`
 
-![1699887358532](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699887358532.png)
+![2023-11-15_11-43-17](./imgs/2023-11-15_11-43-17.png)
 
 这里我们创建了一个叫 `create` 的自定义指令，这个命令有着必填的项目名、可以选择的强制覆盖的选项 `-f`，有着处理函数`action`。
 
@@ -141,7 +141,7 @@ program.parse(process.argv);
 
 我们在复制模板前需要一个模板，现在的我们随便创建一个文件夹并取名为template里面创建一个html。
 
-![1699887707198](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699887707198.png)
+![2023-11-15_11-43-32](./imgs/2023-11-15_11-43-32.png)
 
 像这样创建好后，我们就有了一个模板，但我们依然需要让模板有一个可被下载、查询的地方，这里我选择的是使用 `git` 组织仓库，因为这样可以直接通过`git`提供的接口进行文件下载，包括选择不同的模板等。
 
@@ -149,39 +149,39 @@ program.parse(process.argv);
 
 我们先去 `git` 的官网中新建一个存放模板的组织仓库。
 
-![1699887982585](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699887982585.png)
+![2023-11-15_11-44-17](./imgs/2023-11-15_11-44-17.png)
 
 点击图中的位置进入组织，并点击下图的创建
 
-![1699888173728](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699888173728.png)
+![2023-11-15_11-44-42](./imgs/2023-11-15_11-44-42.png)
 
 会进入到付费的位置，没有大需求就选免费
 
-![1699888215286](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699888215286.png)
+![2023-11-15_11-45-05](./imgs/2023-11-15_11-45-05.png)
 
-填写信息完基本就算创建成功了![1699888438136](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699888438136.png)
+填写信息完基本就算创建成功了![2023-11-15_11-46-02](./imgs/2023-11-15_11-46-02.png)
 
 接下来在组织中创建一个储存库
 
 这里我们暂且选择可见的仓库，千万不要选择私人仓库，否则`git`接口会找不该仓库
 
-![1699888686192](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699888686192.png)
+![2023-11-15_11-46-23](./imgs/2023-11-15_11-46-23.png)
 
 创建好后的仓库，就直接将模板代码提交至本次创建的仓库中就可以了。
 
-![1699924501750](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699924501750.png)
+![2023-11-15_11-46-40](./imgs/2023-11-15_11-46-40.png)
 
 #### 增加一个新的版本标签
 
 跟着下列图操作
 
-![1699924538327](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699924538327.png)
+![2023-11-15_11-46-59](./imgs/2023-11-15_11-46-59.png)
 
-![1699924568867](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699924568867.png)
+![2023-11-15_11-47-21](./imgs/2023-11-15_11-47-21.png)
 
-![1699924699758](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699924699758.png)
+![2023-11-15_11-47-40](./imgs/2023-11-15_11-47-40.png)
 
-![1699924995564](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1699924995564.png)
+![2023-11-15_11-48-03](./imgs/2023-11-15_11-48-03.png)
 
 点击发布发行版后就可以了。
 
@@ -351,7 +351,7 @@ class Generator {
     // 2、调用下载方法
     async downloadGitRepo(repo, tag) {
         // 1、拼接下载地址
-        const requestUrl = `myCli/${repo}${tag ? '#' + tag : ''}`;
+        const requestUrl = `github组织名/${repo}${tag ? '#' + tag : ''}`;
 
         // 2、调用下载方法
         await wrapLoading(
@@ -428,12 +428,11 @@ module.exports = {
 
 完成这一步后我们再去进行`mycli create my-first-cli`命令，会看到下图。
 
-![1700008438224](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1700008438224.png)
+![2023-11-15_11-48-23](./imgs/2023-11-15_11-48-23.png)
 
 会询问要创建的模板项目，我这里的远程组织模板叫做`mycli`，大家选择自己的模板回车，稍等一下就会创建成功，并看到在你使用命令的路径上多出一个项目名的文件夹，就成功了
 
-![1700008496927](C:\Users\ll\AppData\Roaming\Typora\typora-user-images\1700008496927.png)
+![2023-11-15_11-48-40](./imgs/2023-11-15_11-48-40.png)
 
 如果有对模板在下载后进行操作的需求可以使用`fs`依赖进行操作，到这里为止我们已经完成了一个简易的脚手架搭建，感谢大家耐心观看。
 
-### 结语: 别怀疑努力的意义，努力永远都不会辜负你!
