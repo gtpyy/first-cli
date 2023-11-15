@@ -255,7 +255,7 @@ module.exports = async function (name, options) {
         ])
         // 如果用户拒绝覆盖停止剩余操作
         if (!action) {
-            return
+            // return
         } else if (action === 'overwrite') {
             // 移除已存在的目录
             console.log(`\r\nRemoving...`);
